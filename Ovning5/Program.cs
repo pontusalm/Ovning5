@@ -10,14 +10,14 @@ namespace Ovning5
             ////Manager.Menu();
 
 
-            int garagesize = 5;
-            Vehicle[] GarageArray = new Vehicle[garagesize];
+            int garageSize = 5;
+            Vehicle[] GarageArray = new Vehicle[garageSize];
 
-            GarageArray[0] = new Car("abc123", "Blue", "Petrol");
-            GarageArray[1] = new Car("def456", "Red", "Diesel");
-            GarageArray[2] = new Car("zxs767", "Green", "Petrol");
-            GarageArray[3] = new Car("npe002", "Green", "Electric");
-            GarageArray[4] = new Car("dnw122", "Green", "Hybrid");
+            GarageArray[0] = new Bus("bus123", "Blue", 74);
+            GarageArray[1] = new Car("car456", "Red", "Diesel");
+            GarageArray[2] = new MC("mcm767", "Green", 250 );
+            GarageArray[3] = new Car("car002", "Green", "Electric");
+            GarageArray[4] = new Car("car122", "Green", "Hybrid");
 
             foreach (var item in GarageArray)
             {
@@ -27,12 +27,16 @@ namespace Ovning5
         }
 
 
-            class Garage<T> where T : struct
-        {
-            public T Data { get; set; }
-        }
+        //    class Garage<T> where T : struct
+        //{
+        //    public T Data { get; set; }
+        //}
 
-        Garage<Vehicle> garage = new Garage<Vehicle>(); // valid
+        //IEnumerable garage1 = new Garage[]
+        //{
+        //    new Car() {RegNr="abc456",Color= "Red",Fueltype= "Petrol"} };
+
+        //Garage<Vehicle> garage = new Garage<Vehicle>(); // valid
 
 
 
