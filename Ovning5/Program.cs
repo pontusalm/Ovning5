@@ -6,8 +6,8 @@ namespace Ovning5
     {
         static void Main(string[] args)
         {
-            ////Console.WriteLine("Console application Garage running!");
-            ////Manager.Menu();
+            //Console.WriteLine("Console application Garage running!");
+            //Manager.Menu();
 
 
             int garageSize = 5;
@@ -15,13 +15,14 @@ namespace Ovning5
 
             GarageArray[0] = new Bus("bus123", "Blue", 74);
             GarageArray[1] = new Car("car456", "Red", "Diesel");
-            GarageArray[2] = new MC("mcm767", "Green", 250 );
+            GarageArray[2] = new MC("mcm767", "Green", 250);
             GarageArray[3] = new Car("car002", "Green", "Electric");
             GarageArray[4] = new Car("car122", "Green", "Hybrid");
 
             foreach (var item in GarageArray)
             {
-                Console.WriteLine($"{item.RegNr} {item.Color}");
+                //Console.WriteLine($"{item.RegNr} {item.Color}");
+                Console.WriteLine(item.Stats());
             }
 
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.FileIO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,8 @@ namespace Ovning5
 
         public virtual string Stats()
         {
-            return $"Vehicle info: {this.GetType()}, RegNr: {RegNr}, Color: {Color}, ";
+            //return $"Vehicle info: {this.GetType()}, RegNr: {RegNr}, Color: {Color}, ";
+            return $"Vehicle info: RegNr: {RegNr}, Color: {Color}, ";
         }
     }
 
@@ -30,6 +32,10 @@ namespace Ovning5
         {
             Fueltype = fueltype;
         }
+        public override string Stats()
+        {
+            return base.Stats() + $"Fueltype: {Fueltype}";
+        }
     }
 
     public class Bus : Vehicle
@@ -39,6 +45,10 @@ namespace Ovning5
         {
             NrOfSeats = nrOfSeats;
         }
+        public override string Stats()
+        {
+            return base.Stats() + $"Nr of seats: {NrOfSeats}";
+        }
     }
 
     public class MC : Vehicle
@@ -47,6 +57,10 @@ namespace Ovning5
         public MC(string regNr, string color, int cylinderVolume) : base(regNr, color)
         {
             CylinderVolume = cylinderVolume;
+        }
+        public override string Stats()
+        {
+            return base.Stats() + $"Cylinder volume: {CylinderVolume}";
         }
     }
 
