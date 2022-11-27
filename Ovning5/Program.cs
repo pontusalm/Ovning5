@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Design;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Ovning5
 {
@@ -19,14 +20,14 @@ namespace Ovning5
             GarageArray[3] = new Car("car002", "Green", "Electric");
             GarageArray[4] = new Car("car122", "Green", "Hybrid");
 
-            foreach (var item in GarageArray)
+
+            foreach (Vehicle item in GarageArray)
             {
                 //Console.WriteLine($"{item.RegNr} {item.Color}");
                 Console.WriteLine(item.Stats());
             }
 
         }
-
 
         //    class Garage<T> where T : struct
         //{
@@ -54,21 +55,6 @@ namespace Ovning5
 
 
 
-
-        //Car[] GarageArray = new Car[5];
-
-        //GarageArray[0] = new Car("abc123", "Blue", "Petrol");
-        //GarageArray[1] = new Car("def456", "Red", "Diesel");
-        //GarageArray[2] = new Car("zxs767", "Green", "Petrol");
-        //GarageArray[3] = new Car("npe002", "Green", "Electric");
-        //GarageArray[4] = new Car("dnw122", "Green", "Hybrid");
-
-        //foreach (var item in GarageArray)
-        //{
-        //    Console.WriteLine($"{item.RegNr} {item.Color} {item.Fueltype}");
-        //}
-
-       
     }
 
 

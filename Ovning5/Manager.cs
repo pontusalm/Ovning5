@@ -43,6 +43,7 @@ namespace Ovning5
                         break;
                     case '3':
                         handler.ListParkedVehicles();
+
                         break;
                     case '4':
                         handler.SearchVehicles();

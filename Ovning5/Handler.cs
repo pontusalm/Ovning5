@@ -8,11 +8,6 @@ namespace Ovning5
 {
     public class Handler
     {
-        
-        
-        
-
-
 
         public void ParkVehicle()
         {
@@ -34,8 +29,6 @@ namespace Ovning5
         {
             Console.Clear();
             Console.WriteLine("Listing parked vehicles");
-
-
             Console.ReadLine();
         }
 
