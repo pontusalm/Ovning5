@@ -14,7 +14,7 @@ namespace Ovning5
         public Garage()
         {
             GarageArray[0] = new Bus("bus123", "Blue", 74);
-            GarageArray[1] = new Car("car456", "Red", "Diesel");
+            GarageArray[1] = new Car("abc123", "Red", "Diesel");
             GarageArray[2] = new MC("mcm767", "Green", 250);
             GarageArray[3] = new Car("car002", "Green", "Electric");
             GarageArray[4] = new Car("car122", "Green", "Hybrid");
@@ -24,11 +24,29 @@ namespace Ovning5
         {
             foreach (Vehicle item in GarageArray)
             {
-                //Console.WriteLine($"{item.RegNr} {item.Color}");
-                Console.WriteLine(item.Stats());
+                Console.WriteLine(item.VehicleInfo());
             }
             Console.ReadLine();
         }
+
+        public void SearchVehicle()
+        {
+            Console.WriteLine("\tEnter regnr for your vehicle");
+            Console.Write("\t"); string regnrSearch = Console.ReadLine();
+            foreach (Vehicle item in GarageArray)
+            {
+                if (regnrSearch == item.RegNr)
+                { 
+                    Console.WriteLine(item.VehicleInfo());
+                    Console.WriteLine("\n\tPress any key to return to main menu.");
+                    Console.ReadLine();
+                    Manager.Menu();
+                }
+            }
+            Console.WriteLine($"\tVehicle with regnr is {regnrSearch} is not parked in the garage.");
+            SearchVehicle();
+        }
+
 
 
         IEnumerator<Vehicle> IEnumerable<Vehicle>.GetEnumerator()

@@ -37,7 +37,8 @@ namespace Ovning5
         public void SearchVehicles()
         {
             Console.Clear();
-            Console.WriteLine("Search vehicles");
+            Console.WriteLine("\tSearch vehicles");
+            GarageArray.SearchVehicle();
             Console.ReadLine();
         }
 
