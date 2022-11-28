@@ -24,7 +24,7 @@ namespace Ovning5
 
                 
         }
-        //public Garage()
+        //public Garage(Vehicle)
         //{
         //    GarageArray[0] = new Bus("bus123", "Blue", 74);
         //    GarageArray[1] = new Car("abc123", "Red", "Diesel");
@@ -65,21 +65,21 @@ namespace Ovning5
         {
             Console.WriteLine("\tEnter regnr for your vehicle to unpark");
             Console.Write("\t");
-            string regnrSearch = Console.ReadLine();
+            //string regnrSearch = Console.ReadLine();
 
-            for (int i = 0; i < count; i++)
-            {
-                if (Vehicles[i].RegNr == regnrSearch)
-                {
-                    Vehicles[i] = null;
-                    Array.Copy(Vehicles, i + 1, Vehicles, i, count - i - 1);
-                    count--;    
-                    return;
-                }
-                else Console.WriteLine("Your vehicle is not parked in the garage.");
-            }
+            //for (int i = 0; i < count; i++)
+            //{
+            //    if (Vehicles[i].RegNr == regnrSearch)
+            //    {
+            //        Vehicles[i] = null;
+            //        Array.Copy(Vehicles, i + 1, Vehicles, i, count - i - 1);
+            //        count--;    
+            //        return;
+            //    }
+            //    else Console.WriteLine("Your vehicle is not parked in the garage.");
+            //}
                 
-            Console.WriteLine($"\tVehicle with regnr is {regnrSearch} is not parked in the garage.");
+            //Console.WriteLine($"\tVehicle with regnr is {regnrSearch} is not parked in the garage.");
             Console.ReadLine();
         }
 

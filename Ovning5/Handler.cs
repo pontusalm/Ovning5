@@ -33,20 +33,38 @@ namespace Ovning5
             Console.ReadLine();
         }
 
-        public void ListParkedVehicles()
+        public void ListParkedVehicles(IEnumerable<Vehicle> GarageArray)
         {
-            //Console.Clear();
-            //Console.WriteLine("\tVehicles currently parked in the garage:");
-            //GarageArray.DispalyGarageData();
-
+            Console.Clear();
+            Console.WriteLine("\tVehicles currently parked in the garage:");
+            foreach (Vehicle item in GarageArray)
+            {
+                Console.WriteLine(item.VehicleInfo());
+            }
+            Console.WriteLine("\n\tPress any key to return to main menu");
+            Console.ReadLine();
         }
 
-        public void SearchVehicles()
+        public void SearchVehicles(IEnumerable<Vehicle> GarageArray)
         {
-            //Console.Clear();
-            //Console.WriteLine("\tSearch vehicles");
-            //GarageArray.SearchVehicle();
-            //Console.ReadLine();
+            Console.WriteLine("\tEnter regnr for your vehicle");
+            Console.Write("\t");
+            string? v = Console.ReadLine();
+            string? regnrSearch = v;
+            foreach (Vehicle item in GarageArray)
+            {
+                if (regnrSearch == item.RegNr)
+                {
+                    Console.WriteLine(item.VehicleInfo());
+                    Console.WriteLine("\n\tPress any key to return to main menu.");
+                    Console.ReadLine();
+                    Manager.Menu();
+                }
+            }
+            Console.WriteLine($"\tVehicle with regnr is {regnrSearch} is not parked in the garage.");
+            Console.WriteLine("\n\tPress any key to return to main menu.");
+            Console.ReadLine();
+            
         }
 
 

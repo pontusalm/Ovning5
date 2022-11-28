@@ -52,11 +52,11 @@ namespace Ovning5
 
                         break;
                     case '3':
-                        handler.ListParkedVehicles();
+                        handler.ListParkedVehicles(GarageArray);
 
                         break;
                     case '4':
-                        handler.SearchVehicles();
+                        handler.SearchVehicles(GarageArray);
                         break;
                     case '0':
                         Environment.Exit(0);
