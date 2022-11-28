@@ -11,6 +11,14 @@ namespace Ovning5
         public static void Menu()
         {
 
+            Garage<Vehicle> GarageArray = new Garage<Vehicle>(10);
+            GarageArray.AddVehicle(new Car("abc123", "Red", "Diesel"));
+            GarageArray.AddVehicle(new Bus("bus123", "Blue", 74));
+            GarageArray.AddVehicle(new MC("mcm767", "Green", 250));
+            GarageArray.AddVehicle(new Car("car002", "Green", "Electric"));
+            GarageArray.AddVehicle(new Car("car122", "Green", "Hybrid"));
+
+
             while (true)
             {
                 Console.Clear();
@@ -36,10 +44,12 @@ namespace Ovning5
                 switch (input)
                 {
                     case '1':
-                        handler.ParkVehicle();
+                        handler.ParkVehicle(GarageArray);
+                        
                         break;
                     case '2':
                         handler.UnparkVehicle();
+
                         break;
                     case '3':
                         handler.ListParkedVehicles();
