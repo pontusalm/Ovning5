@@ -20,7 +20,7 @@ namespace Ovning5
         public virtual string Stats()
         {
             //return $"Vehicle info: {this.GetType()}, RegNr: {RegNr}, Color: {Color}, ";
-            return $"Vehicle info: RegNr: {RegNr}, Color: {Color}, ";
+            return $"RegNr: {RegNr},\t Color: {Color}, ";
         }
     }
 
@@ -34,7 +34,7 @@ namespace Ovning5
         }
         public override string Stats()
         {
-            return base.Stats() + $"Fueltype: {Fueltype}";
+            return $"\tCar\t\t {base.Stats()}\t Fueltype: {Fueltype}";
         }
     }
 
@@ -47,7 +47,7 @@ namespace Ovning5
         }
         public override string Stats()
         {
-            return base.Stats() + $"Nr of seats: {NrOfSeats}";
+            return $"\tBus\t\t {base.Stats()}\t Nr of seats: {NrOfSeats}";
         }
     }
 
@@ -60,7 +60,7 @@ namespace Ovning5
         }
         public override string Stats()
         {
-            return base.Stats() + $"Cylinder volume: {CylinderVolume}";
+            return $"\tMotorcycle \t {base.Stats()}\t Cylinder volume: {CylinderVolume}";
         }
     }
 

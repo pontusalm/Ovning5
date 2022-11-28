@@ -29,7 +29,7 @@ namespace Ovning5
         public void ListParkedVehicles()
         {
             Console.Clear();
-            Console.WriteLine("Listing parked vehicles");
+            Console.WriteLine("\tVehicles currently parked in the garage:");
             GarageArray.DispalyGarageData();
 
         }
