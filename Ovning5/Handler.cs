@@ -11,18 +11,17 @@ namespace Ovning5
         //Garage<Vehicle>GarageArray = new Garage<Vehicle>(10);
         //GarageArray.AddVehicle(new Car("abc123", "Red", "Diesel"));
 
-        public void ParkVehicle(Garage<Vehicle> garage)
+        public void ParkVehicle(Garage<Vehicle> GarageArray)
         {
             // Method for parking vehicle
-            garage.AddVehicle(new Car("def999", "Red", "Diesel"));
-            Console.WriteLine("garage" + garage);
-            foreach (Vehicle item in garage)
+            GarageArray.AddVehicle(new Car("def999", "Red", "Diesel"));
+            Console.WriteLine("garage" + GarageArray);
+            foreach (Vehicle item in GarageArray)
             {
-                Console.WriteLine(item.RegNr);
+                Console.WriteLine(item.VehicleInfo());
             }
-          
-            Console.Clear();
-            Console.WriteLine("Parking vehicle in the garage");
+            Console.WriteLine("Vehicle successfully parked in the garage");
+            Console.WriteLine("\n\tPress any key to return to main menu");
             Console.ReadLine();
         }
 
