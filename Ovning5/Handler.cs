@@ -41,7 +41,7 @@ namespace Ovning5
             Console.Clear();
             Console.WriteLine("\tUnparking vehicle");
             GarageArray.RemoveVehicle();
-            Console.WriteLine("\t Your vehicle is no longer parked in the garage.");
+            Console.WriteLine("\tYour vehicle is no longer parked in the garage.");
             Console.WriteLine("\n\tPress enter to return to main menu.");
             Console.Write("\t"); Console.ReadLine();
         }
