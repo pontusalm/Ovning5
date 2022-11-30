@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,25 +12,36 @@ namespace Ovning5
         //Garage<Vehicle>GarageArray = new Garage<Vehicle>(10);
         //GarageArray.AddVehicle(new Car("abc123", "Red", "Diesel"));
 
-        public void ParkVehicle(Garage<Vehicle> GarageArray)
+        public void ParkCar(Garage<Vehicle> GarageArray)
         {
-            // Method for parking vehicle
-            GarageArray.AddVehicle(new Car("def999", "Red", "Diesel"));
-            Console.WriteLine("garage" + GarageArray);
+            Console.WriteLine("\tEnter registration number of your car");
+            Console.Write("\t"); string regNr = Console.ReadLine();
+            Console.WriteLine("\tEnter the color of your car");
+            Console.Write("\t"); string color = Console.ReadLine();
+            Console.WriteLine("\tEnter the fueltype of your car");
+            Console.Write("\t"); string fueltype = Console.ReadLine();
+
+            GarageArray.AddVehicle(new Car(regNr, color, fueltype));
+
             foreach (Vehicle item in GarageArray)
             {
-                Console.WriteLine(item.VehicleInfo());
+                if (regNr == item.RegNr)
+                {
+                    Console.WriteLine(item.VehicleInfo());
+                    Console.WriteLine("\tVehicle succerssfully parked in the garage");
+                    Console.WriteLine("\n\tPress enter to return to main menu.");
+                    Console.Write("\t"); Console.ReadLine();
+                    Manager.Menu();
+                }
             }
-            Console.WriteLine("Vehicle successfully parked in the garage");
-            Console.WriteLine("\n\tPress any key to return to main menu");
-            Console.ReadLine();
         }
 
-        public void UnparkVehicle()
+        public void UnparkVehicle(Garage<Vehicle> GarageArray)
         {
             Console.Clear();
-            Console.WriteLine("Unparking vehicle");
-            Console.ReadLine();
+            Console.WriteLine("\tUnparking vehicle");
+            GarageArray.RemoveVehicle();
+            Console.Write("\t"); Console.ReadLine();
         }
 
         public void ListParkedVehicles(IEnumerable<Vehicle> GarageArray)
@@ -40,30 +52,26 @@ namespace Ovning5
             {
                 Console.WriteLine(item.VehicleInfo());
             }
-            Console.WriteLine("\n\tPress any key to return to main menu");
-            Console.ReadLine();
+            Console.WriteLine("\n\tPress enter to return to main menu");
+            Console.Write("\t"); Console.ReadLine();
         }
 
-        public void SearchVehicles(IEnumerable<Vehicle> GarageArray)
+        public void SearchVehicles(Garage<Vehicle> GarageArray)
         {
-            Console.WriteLine("\tEnter regnr for your vehicle");
-            Console.Write("\t");
-            string? v = Console.ReadLine();
-            string? regnrSearch = v;
-            foreach (Vehicle item in GarageArray)
+            SearchVehicles runquery = new SearchVehicles(GarageArray);
+            Console.WriteLine("\tEnter Car, Bus or MC");
+            string input = Console.ReadLine();
+
+            if (runquery.SearchVehicleType(input.ToLower()) != true)
             {
-                if (regnrSearch == item.RegNr)
-                {
-                    Console.WriteLine(item.VehicleInfo());
-                    Console.WriteLine("\n\tPress any key to return to main menu.");
-                    Console.ReadLine();
-                    Manager.Menu();
-                }
+                this.SearchVehicles(GarageArray);
             }
-            Console.WriteLine($"\tVehicle with regnr is {regnrSearch} is not parked in the garage.");
-            Console.WriteLine("\n\tPress any key to return to main menu.");
-            Console.ReadLine();
-            
+
+
+
+            Console.Write("\t"); Console.ReadLine();
+            //GarageArray.SearchVehicle();
+
         }
 
 

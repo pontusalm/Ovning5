@@ -44,11 +44,32 @@ namespace Ovning5
                 switch (input)
                 {
                     case '1':
-                        handler.ParkVehicle(GarageArray);
-                        
+                        Console.WriteLine(" choose 1 to park car, 2 for Bus, 3 for MC or 0 to exit application");
+                        string input2 = Console.ReadLine();
+                        if (input2 == "1")
+                        {handler.ParkCar(GarageArray);}
+
+                        else if (input2 == "2")
+                        {   Console.WriteLine("Parking Bus");
+                            Console.ReadLine();}
+
+                        else if (input2 == "3")
+                        {   Console.WriteLine("Parking MC");
+                            Console.ReadLine(); }
+
+                        else if (input2 == "0")
+                            Environment.Exit(0);
+
+                        else
+                        {
+                        Console.WriteLine("Please enter a valid input (1, 2, 3 or 0 to exit)");
+                            goto case '1';
+                        }
                         break;
+
+                        
                     case '2':
-                        handler.UnparkVehicle();
+                        handler.UnparkVehicle(GarageArray);
 
                         break;
                     case '3':
